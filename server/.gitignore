@@ -1,4 +1,18 @@
-# .gitignore
-node_modules/
-dist/
+# dependencies
+/node_modules
+
+# build output
+/dist
+
+# environment variables
+.env
+
+# logs
 *.log
+
+# IDE settings
+.idea/
+.vscode/
+
+# macOS
+.DS_Store
