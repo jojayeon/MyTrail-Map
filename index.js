@@ -5,21 +5,18 @@ fetch(
 )
   .then((response) => {
     if (!response.ok) {
-      throw new Error("Network response was not ok " + response.statusText);
+      throw new Error(response.statusText);
     }
     return response.text();
-    scrollY;
   })
   .then((xmlString) => {
     return parseStringPromise(xmlString);
   })
   .then((jsonData) => {
-    const data = jsonData.ServiceResult.MsgBody[0].items;
-    const data1 = jsonData.ServiceResult.comMsgHeader;
-    const data2 = jsonData.ServiceResult.msgHeader;
-    console.log(data[0]);
-    console.log(data1);
-    console.log(data2);
+    const data = jsonData.ServiceResult.MsgBody[0].items; //MsgBody[0] []이부분에 순서대로 숫자 대입
+    console.log(data[0]); // data 첫 항목
+    const a = data[0].address[0];
+    console.log(a);
   })
   .catch((error) => {
     console.error(error);
